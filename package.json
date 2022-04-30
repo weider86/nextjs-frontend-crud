@@ -1,4 +1,19 @@
 {
+  "name": "next-frontend-crud",
+  "version": "1.0.0",
+  "description": "a next frontend project",
+  "author": "Weider Lima (weider86@gmail.com)",
+  "main": "index.js",
+  "license": "ISC",
+  "keywords": [
+    "next",
+    "react"
+  ],
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
     "next": "^12.1.5",
     "react": "^18.1.0",
