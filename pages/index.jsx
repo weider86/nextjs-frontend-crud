@@ -1,7 +1,12 @@
 import React from 'react';
+import { Card } from '../src/components/Card';
+import { Error } from '../src/components/Error';
+import { List, ListItem } from '../src/components/List';
+import { Loading } from '../src/components/Loading';
+import { Title } from '../src/components/Title';
+import { Author } from '../src/modules/Author';
 import { useArticlesQuery } from '../src/providers/queries/useArticlesQuery';
 import { capitalize } from '../src/utils/capitalize';
-import { Card } from '../src/components/Card';
 
 const name = 'articles';
 
@@ -9,39 +14,28 @@ const Articles = () => {
   const { data: articles, isLoading, isIdle, isError } = useArticlesQuery();
 
   if (isLoading || isIdle) {
-    return <div>{`Loading ${name}...`}</div>;
+    return <Loading message={name} />;
   }
 
   if (isError) {
-    return (
-      <div>
-        {`Error on loading ${capitalize(name)}`}
-        <span role='img' aria-label='sad'>
-          😢
-        </span>
-      </div>
-    );
+    return <Error message={name} />;
   }
 
   return (
     <div id={name} aria-label={name}>
-      <h1>{capitalize(name)}</h1>
+      <Title>{capitalize(name)}</Title>
       <Card>
-        <ul>
+        <List>
           {articles.map((article) => (
-            <li>
+            <ListItem>
               <a href={`/${article._id}`} target='_blank'>
-                {article.title}
+                {capitalize(article.title)}
               </a>
-            </li>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       </Card>
-      <div>
-        <a href='/author' target='_blank'>
-          About project author xpto
-        </a>
-      </div>
+      <Author />
     </div>
   );
 };

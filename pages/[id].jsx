@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useArticleByIdQuery } from '../providers/queries/useArticleByIdQuery';
+import { Error } from '../src/components/Error';
+import { Loading } from '../src/components/Loading';
 import { capitalize } from '../utils/capitalize';
 
 const name = 'article';
@@ -17,18 +19,11 @@ const Article = () => {
   } = useArticleByIdQuery(articleId);
 
   if (isLoading || isIdle) {
-    return <div>{`Loading ${name}...`}</div>;
+    return <Loading message={name} />;
   }
 
   if (isError) {
-    return (
-      <div>
-        {`Error on loading ${name}`}
-        <span role='img' aria-label='sad'>
-          😢
-        </span>
-      </div>
-    );
+    return <Error message={name} />;
   }
 
   return (

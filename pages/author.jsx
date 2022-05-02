@@ -1,5 +1,7 @@
 import React from 'react';
 import { useAuthorQuery } from '../providers/queries/useAuthorQuery';
+import { Error } from '../src/components/Error';
+import { Loading } from '../src/components/Loading';
 import { capitalize } from '../utils/capitalize';
 
 const name = 'author';
@@ -10,18 +12,11 @@ const Author = () => {
   const { data: author, isLoading, isIdle, isError } = useAuthorQuery();
 
   if (isLoading || isIdle) {
-    return <div>{`Loading ${name}...`}</div>;
+    return <Loading message={name} />;
   }
 
   if (isError) {
-    return (
-      <div>
-        {`Error on loading ${name}`}
-        <span role='img' aria-label='sad'>
-          😢
-        </span>
-      </div>
-    );
+    return <Error message={name} />;
   }
 
   return (
