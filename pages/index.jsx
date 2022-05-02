@@ -1,6 +1,7 @@
 import React from 'react';
 import { useArticlesQuery } from '../providers/queries/useArticlesQuery';
 import { capitalize } from '../utils/capitalize';
+import { Card } from '../components/Card';
 
 const name = 'articles';
 
@@ -25,7 +26,7 @@ const Articles = () => {
   return (
     <div id={name} aria-label={name}>
       <h1>{capitalize(name)}</h1>
-      <div>
+      <Card>
         <ul>
           {articles.map((article) => (
             <li>
@@ -35,7 +36,7 @@ const Articles = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </Card>
       <div>
         <a href='/author' target='_blank'>
           About project author
