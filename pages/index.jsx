@@ -1,7 +1,7 @@
 import React from 'react';
-import { useArticlesQuery } from '../providers/queries/useArticlesQuery';
-import { capitalize } from '../utils/capitalize';
-import { Card } from '../components/Card';
+import { useArticlesQuery } from '../src/providers/queries/useArticlesQuery';
+import { capitalize } from '../src/utils/capitalize';
+import { Card } from '../src/components/Card';
 
 const name = 'articles';
 
@@ -39,7 +39,7 @@ const Articles = () => {
       </Card>
       <div>
         <a href='/author' target='_blank'>
-          About project author
+          About project author xpto
         </a>
       </div>
     </div>
