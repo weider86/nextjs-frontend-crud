@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { getArticleById } from '../api/getArticleById';
+import { getArticleById } from '../../api/getArticleById';
 
 const useArticleByIdQuery = (articleId) =>
   useQuery(['article', articleId], () => getArticleById(articleId), {

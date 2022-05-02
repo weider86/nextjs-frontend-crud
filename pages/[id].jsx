@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import { useArticleByIdQuery } from '../providers/useArticleByIdQuery';
+import { useArticleByIdQuery } from '../providers/queries/useArticleByIdQuery';
 import { capitalize } from '../utils/capitalize';
 
 const name = 'article';

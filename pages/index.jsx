@@ -1,5 +1,5 @@
 import React from 'react';
-import { useArticlesQuery } from '../providers/useArticlesQuery';
+import { useArticlesQuery } from '../providers/queries/useArticlesQuery';
 import { capitalize } from '../utils/capitalize';
 
 const name = 'articles';

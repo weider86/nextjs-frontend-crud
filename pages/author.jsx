@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuthorQuery } from '../providers/useAuthorQuery';
+import { useAuthorQuery } from '../providers/queries/useAuthorQuery';
 import { capitalize } from '../utils/capitalize';
 
 const name = 'author';
