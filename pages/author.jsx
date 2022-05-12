@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAuthorQuery } from '../providers/queries/useAuthorQuery';
 import { Error } from '../src/components/Error';
 import { Loading } from '../src/components/Loading';
-import { capitalize } from '../utils/capitalize';
+import { useAuthorQuery } from '../src/providers/queries/useAuthorQuery';
+import { capitalize } from '../src/utils/capitalize';
 
 const name = 'author';
 const githubUrl = 'https://github.com/weider86';
